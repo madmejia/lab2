@@ -19,8 +19,7 @@
 
 #include "functions.h"
 #include <stdio.h>
-
-/* Your functions go here */
+#include <math.h>
 
 /**
  * Multiplies two integers to output a rectangle's area

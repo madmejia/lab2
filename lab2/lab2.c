@@ -21,7 +21,35 @@
 
 
 int main(void) {
+
+        int selection, tmp;
         int rect_height = 8, rect_width = 4;
+
+        printf("Select a shape from the following:\n");
+        printf("R for Rectanglse\n");
+        printf("C for Circles\n");
+        printf("T for Right Triangles\n");
+        printf("P for Regular Polygons\n");
+        printf("Make your selection: \n");
+
+        while ((tmp = getchar()) != '\n')
+                selection = tmp;
+
+        switch (selection) {
+        case 'R': 
+        case 'r':
+                printf("Select a caluclation to perform:\n");
+                printf("A for Area\n");
+                printf("P for Perimeter\n");
+                printf("D for Diagonal\n");
+                printf("Make your selection: \n")
+;                while ((tmp = getchar()) != '\n');
+                        selection = tmp;
+
+
+
+
+        }
 
         double area_r = area_rectangle(rect_height, rect_width);
         printf("A rectangle with height %d and width %d has an area of %lf.\n",

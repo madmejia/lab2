@@ -19,7 +19,6 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
-/* You may need #include <> statements here */
 #include <stdio.h>
 #include <math.h>
 
@@ -35,6 +34,5 @@ double perimeter_triangle(double tri_height, double tri_base);
 double exterior_angle(int n_sides);
 double interior_angle(int n_sides);
 double area_regular_polygon(int n_sides, double side_length);
-
 
 #endif
