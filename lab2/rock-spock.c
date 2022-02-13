@@ -20,6 +20,7 @@
 #define SCISSORS 'S'
 #define LIZARD 'L'
 #define SPOCK 'V'
+#define QUIT 'Q'
 
 void move(int who, int move);
 int winner(int computer, int player);
@@ -86,7 +87,8 @@ int main(void)
 
         /* todo --implement function winner() */
         /* todo --implement function print_winner() */
-		
+
+	print_winner(winner(computer, player), computer, player);	
 
 	}
 
@@ -139,15 +141,22 @@ int winner(int computer, int player)
 	switch (player) {
 	case ROCK:
 		switch (computer) {
+		case ROCK:
+			return ROCK;
+			break;
 		case PAPER:
 		case SPOCK:
 			return COMPUTER;
 			break;
 		default:
 			return PLAYER;
-		}
+		} 
+		break;
 	case PAPER:
 		switch (computer) {
+		case PAPER:
+			return PAPER;
+			break;
 		case SCISSORS:
 		case LIZARD:
 			return COMPUTER;
@@ -155,37 +164,42 @@ int winner(int computer, int player)
 		default:
 			return PLAYER;
 		}
+		break;
 	case SCISSORS:
 		switch (computer) {
+		case SCISSORS:
+			return SCISSORS;
+			break;
 		case ROCK:
 		case SPOCK:
 			return COMPUTER;
 			break;
 		default: 
 			return PLAYER;
-	
 		}
+		break;
 	case LIZARD:
 		switch (computer) {
+		case LIZARD:
+			return LIZARD;
 		case ROCK:
 		case SPOCK:
 			return COMPUTER;
 		default:
 			return PLAYER;
 		}
+		break;
 	case SPOCK:
 		switch (computer) {
+		case SPOCK:
+			return SPOCK;
 		case LIZARD:
 		case PAPER:
 			return COMPUTER;
 		default:
 			return PLAYER;
 		}
-	case 'Q':
-		printf("SPOCK eats a ROCK while chasing a LIZARD.\n");
-		return 0;
-	default:
-		printf("The entered value is unknown. Try again.\n");
+		break;
 	}
 	/* todo - determine the winner; use switch statements */
 	return COMPUTER;
@@ -213,81 +227,81 @@ void print_winner(int winner, int comp_move, int player_move)
 	}
 
 	switch(comp_move) {
-		case ROCK:
-			switch (player_move) {
-				case PAPER:
-					printf("Paper covers rock\n");
-					break;
-				case LIZARD:
-					printf("Rock crushes lizard\n");
-					break;
-				case SCISSORS:
-					printf("Rock crushes scissors\n");
-					break;
-				case SPOCK:
-					printf("Spock vaporizes rock\n");
-			}
-			break;
+	case ROCK:
+		switch (player_move) {
 		case PAPER:
-			switch (player_move) {
-				case SCISSORS:
-					printf("Scissors cuts paper\n");
-					break;
-				case ROCK:
-					printf("Paper covers rock\n");
-					break;
-				case LIZARD:
-					printf("Lizard eats paper\n");
-					break;
-				case SPOCK:
-					printf("Paper disproves Spock\n");
-			}
-			break;
-		case SCISSORS:
-			switch (player_move) {
-				case PAPER:
-					printf("Scissors cuts paper\n");
-					break;
-				case SPOCK:
-					printf("Spock smashes scissors\n");
-					break;
-				case LIZARD:
-					printf("Scissors decapitates lizard\n");
-					break;
-				case ROCK:
-					printf("Rock crushes scissors\n");
-			}
+			printf("Paper covers rock\n");
 			break;
 		case LIZARD:
-			switch (comp_move) {
-				case ROCK:
-					printf("Rock crushes lizard\n");
-					break;
-				case SPOCK:
-					printf("Lizard poisons Spock\n");
-					break;
-				case SCISSORS:
-					printf("Scissors decaptitates lizard\n");
-					break;
-				case PAPER:
-					printf("Lizard eats paper\n");
-			}
+			printf("Rock crushes lizard\n");
+			break;
+		case SCISSORS:
+			printf("Rock crushes scissors\n");
 			break;
 		case SPOCK:
-			switch (player_move) {
-				case LIZARD:
-					printf("Lizard poisons Spock\n");
-					break;
-				case SCISSORS:
-					printf("Spock smashes scissors\n");
-					break;
-				case PAPER:
-					printf("Paper disproves Spock\n");
-					break;
-				case ROCK:
-					printf("Spock vaporizes rock");
-			}		
+			printf("Spock vaporizes rock\n");
+		}
+		break;
+	case PAPER:
+		switch (player_move) {
+		case SCISSORS:
+			printf("Scissors cuts paper\n");
 			break;
+		case ROCK:
+			printf("Paper covers rock\n");
+			break;
+		case LIZARD:
+			printf("Lizard eats paper\n");
+			break;
+		case SPOCK:
+			printf("Paper disproves Spock\n");
+		}
+		break;
+	case SCISSORS:
+		switch (player_move) {
+		case PAPER:
+			printf("Scissors cuts paper\n");
+			break;
+		case SPOCK:
+			printf("Spock smashes scissors\n");
+			break;
+		case LIZARD:
+			printf("Scissors decapitates lizard\n");
+			break;
+		case ROCK:
+			printf("Rock crushes scissors\n");
+		}
+		break;
+	case LIZARD:
+		switch (player_move) {
+		case ROCK:
+			printf("Rock crushes lizard\n");
+			break;
+		case SPOCK:
+			printf("Lizard poisons Spock\n");
+			break;
+		case SCISSORS:
+			printf("Scissors decaptitates lizard\n");
+			break;
+		case PAPER:
+			printf("Lizard eats paper\n");
+		}
+		break;
+	case SPOCK:
+		switch (player_move) {
+		case LIZARD:
+			printf("Lizard poisons Spock\n");
+			break;
+		case SCISSORS:
+			printf("Spock smashes scissors\n");
+			break;
+		case PAPER:
+			printf("Paper disproves Spock\n");
+			break;
+		case ROCK:
+			printf("Spock vaporizes rock");
+		}		
+		break;
 	}
 
 
