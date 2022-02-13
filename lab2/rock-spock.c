@@ -3,6 +3,7 @@
  * @author Madison Mejia
  * @date 2/9/2022
  * @brief Play Rock-paper-scissors-lizard-Spock against the machine
+ * @bug None found so far
  */
 
 #include <stdio.h>
@@ -22,6 +23,7 @@
 #define SPOCK 'V'
 #define QUIT 'Q'
 
+///function prototypes
 void move(int who, int move);
 int winner(int computer, int player);
 void print_winner(int winner, int comp_move, int player_move);
@@ -35,68 +37,76 @@ int main(void)
 	int player;
         int tmp;
 
-	/* set up the seed value for the random number generator */
-	/* call only once */
+	///sets up the seed value for RNG 
 	seed();
 
-        /* todo - add a while loop to keep playing */
+	///Prompts user to chose from the following options
+	printf("Enter a move:\n");
+	printf("R for ROCK\n");
+	printf("P for PAPER\n");
+	printf("S for SCISSORS\n");
+	printf("L for LIZARD\n");
+	printf("V for SPOCK\n");
+	printf("Q to have SPOCK eat a ROCK while chasing a LIZARD and quit\n");
+	printf("Move: ");
 
-	while (tmp != 'Q') {
-		printf("Enter a move:\n");
-		printf("R for ROCK\n");
-		printf("P for PAPER\n");
-		printf("S for SCISSORS\n");
-		printf("L for LIZARD\n");
-		printf("V for SPOCK\n");
-		printf("Q to have SPOCK eat a ROCK while chasing a LIZARD and quit\n");
-		printf("Move: ");
-
-		while ((tmp = getchar()) != '\n')
-                	player = tmp;
-
-
-        /* todo - error check input */
-	/* todo -- exit from program when player selects 5 */
-	/* otherwise play a game of rock-paper-scissors-lizard-spock */
-
-        /* debug -- you don't need move() to play game  */
+	/**
+	 * stores user input in tmp to check for the newline character
+	 * then stores the value in the player variable
+	 */
+	while ((tmp = getchar()) != '\n')
+		player = tmp;
+	
+	/**
+	 * will execute move function unless Q or some other 
+	 * unrecognized character is entered
+	 */
+	switch (player) {
+	case ROCK:
+	case PAPER:
+	case SCISSORS:
+	case SPOCK:
+	case LIZARD:
 		move(PLAYER, player);
+		break;
+	case QUIT:
+		printf("SPOCK eats a ROCK while chasing a LIZARD.\n");
+		return 0;
+	default:
+		printf("The value is unknown. Try again.\n");
+		return 0;
+	}
 
-        /* generate random number for computers play */
-        	switch(nrand(CHOICES)) {
-        	case 0:
-                	computer = ROCK;
-                	break;
-        	case 1:
-                	computer = PAPER;
-                	break;
-        	case 2:
-                	computer = SCISSORS;
-                	break;
-        	case 3:
-                	computer = LIZARD;
-                	break;
-        	case 4:
-                	computer = SPOCK;
-                	break;
+        ///generates random number for computer's play 
+        switch(nrand(CHOICES)) {
+        case 0:
+        	computer = ROCK;
+        	break;
+        case 1:
+        	computer = PAPER;
+        	break;
+        case 2:
+        	computer = SCISSORS;
+        	break;
+        case 3:
+        	computer = LIZARD;
+        	break;
+        case 4:
+        	computer = SPOCK;
+        	break;
         }
 
-	/*debug -- you don't need this to play the game */
-		move(COMPUTER, computer);
+	///calls the move function for the computer
+	move(COMPUTER, computer);
 
-
-        /* todo --implement function winner() */
-        /* todo --implement function print_winner() */
-
+	///prints the winner using the winner function
 	print_winner(winner(computer, player), computer, player);	
-
-	}
 
 	return 0;
 }
 
 
-/** prints the player's or computer's  move to stdin
+/** prints the player's or computer's move to stdin
  * used in debugging
  * @param who is it the computer or the player's move?
  * @param move what move did they make
@@ -131,10 +141,10 @@ void move(int who, int move)
 
 
 /**
- * determines the winner either COMPUTER or PLAYER
+ * determines the winner either COMPUTER or PLAYER using switch statements
  * @param computer the computer's move
  * @param player the player's move
- * @return the winner of the game
+ * @return the winner of the game or the result of a tie
  */
 int winner(int computer, int player)
 {
@@ -201,8 +211,6 @@ int winner(int computer, int player)
 		}
 		break;
 	}
-	/* todo - determine the winner; use switch statements */
-	return COMPUTER;
 }
 
 /**
@@ -214,6 +222,7 @@ int winner(int computer, int player)
  */
 void print_winner(int winner, int comp_move, int player_move)
 {   
+	///switch statement uses winner variable to determine result
 	switch (winner) {
 	case COMPUTER:
 		printf("Computer Wins!\n");
@@ -226,6 +235,10 @@ void print_winner(int winner, int comp_move, int player_move)
 
 	}
 
+	/**
+	* switch statement determines how the match was won 
+	* using the values for the computer's move and player's move
+	*/
 	switch(comp_move) {
 	case ROCK:
 		switch (player_move) {
@@ -304,31 +317,12 @@ void print_winner(int winner, int comp_move, int player_move)
 		break;
 	}
 
-
-	/*todo - use a switch statement
-
-
-    print Computer Wins! or Player Wins!
-
-    And how they won. Use the phrases below
-
-    Scissors cuts paper
-    Paper covers rock
-    Rock crushes lizard
-    Lizard poisons Spock
-    Spock smashes scissors
-    Scissors decapitates lizard
-    Lizard eats paper
-    Paper disproves Spock
-    Spock vaporizes rock
-    Rock crushes scissors
-*/
 }
 
 /**
  * returns a uniform random integer n, between 0 <= n < range
  * @param range defines the range of the random number [0,range)
- * @return the generated random number
+ * @return the generated random number (RNG)
  */
 int nrand(int range)
 {
@@ -336,9 +330,9 @@ int nrand(int range)
 }
 
 /**
- * call this to seed the random number generator rand()
+ * calls this to seed RNG rand()
  * uses a simple seed -- the number of seconds since the epoch
- * call once before using nrand and similar functions that call rand()
+ * calls once before using nrand and similar functions that call rand()
  */
 void seed(void)
 {
