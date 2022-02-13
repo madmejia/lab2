@@ -1,9 +1,9 @@
 /**
  * @file lab2.c
  *
- * @author Nicholas Crepeau
+ * @author Madison Mejia
  *
- * @date 1/1/2019
+ * @date 2/9/2022
  *
  * Assignment: Lab 2
  *
@@ -11,7 +11,7 @@
  *
  * @details
  *
- * @bugs none
+ * @bug none
  *
  * @todo none
  */
@@ -21,12 +21,11 @@
 
 
 int main(void) {
-        int h = 2;
-        int w = 3;
-        int area;
+        int rect_height = 8, rect_width = 4;
 
-        area = area_rectangle(h, w);
-        printf("A rectangle with height %d and width %d has an area of %d.\n", h, w, area);
+        double area_r = area_rectangle(rect_height, rect_width);
+        printf("A rectangle with height %d and width %d has an area of %lf.\n",
+        rect_height, rect_width, area_r);
 
         return 0;
 }

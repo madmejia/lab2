@@ -1,20 +1,20 @@
 /**
  * @file functions.c
  *
- * @author Nicholas Crepeau
+ * @author Madison Mejia
  *
- * @date 1/1/2019
+ * @date 2/9/2022
  *
  * Assignment: Lab 2
  *
  * @brief contains the function definitions for lab 2
  *
- * @details Copy your functions (not the main function) from lab 1 into this file
- * so that you use them for lab 2
+ * @details functions (not the main function) from lab 1 have been copied
+ * into this file to use them for lab 2
  *
- * @bugs none
- *
- * @todo Add the functions from lab 1
+ * @bug none
+ * 
+ * @todo none
  */
 
 #include "functions.h"
@@ -22,12 +22,6 @@
 
 /* Your functions go here */
 
-/**
-* Finds the area of a rectangle
-* @param h The height of the triangle
-* @param w The width of the triangle
-* @return The product h * w
-*/
 /**
  * Multiplies two integers to output a rectangle's area
  * @param rect_height the multiplicand

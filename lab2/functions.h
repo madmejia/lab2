@@ -1,9 +1,9 @@
 /**
  * @file functions.h
  *
- * @author Nicholas Crepeau
+ * @author Madison Mejia
  *
- * @date 1/1/2019
+ * @date 2/9/2022
  *
  * Assignment: Lab 2
  *
@@ -11,7 +11,7 @@
  *
  * @details see functions.c for details
  *
- * @bugs none
+ * @bug none
  *
  * @todo none
  */
@@ -20,6 +20,8 @@
 #define FUNCTIONS_H
 
 /* You may need #include <> statements here */
+#include <stdio.h>
+#include <math.h>
 
 /* Function prototyes go here */
 double area_rectangle(int rect_height, int rect_width);
