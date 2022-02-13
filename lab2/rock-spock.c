@@ -39,16 +39,19 @@ int main(void)
 	seed();
 
         /* todo - add a while loop to keep playing */
-        printf("Enter a move:\n");
-	printf("R for ROCK\n");
-	printf("P for PAPER\n");
-	printf("S for SCISSORS\n");
-	printf("L for LIZARD\n");
-	printf("V for SPOCK\n");
-	printf("Q to have SPOCK eat a ROCK while chasing a LIZARD and quit\n");
-	printf("Move: ");
-	while ((tmp = getchar()) != '\n')
-                player = tmp;
+
+	while (tmp != 'Q') {
+		printf("Enter a move:\n");
+		printf("R for ROCK\n");
+		printf("P for PAPER\n");
+		printf("S for SCISSORS\n");
+		printf("L for LIZARD\n");
+		printf("V for SPOCK\n");
+		printf("Q to have SPOCK eat a ROCK while chasing a LIZARD and quit\n");
+		printf("Move: ");
+
+		while ((tmp = getchar()) != '\n')
+                	player = tmp;
 
 
         /* todo - error check input */
@@ -56,34 +59,36 @@ int main(void)
 	/* otherwise play a game of rock-paper-scissors-lizard-spock */
 
         /* debug -- you don't need move() to play game  */
-	move(PLAYER, player);
+		move(PLAYER, player);
 
         /* generate random number for computers play */
-        switch(nrand(CHOICES)) {
-        case 0:
-                computer = ROCK;
-                break;
-        case 1:
-                computer = PAPER;
-                break;
-        case 2:
-                computer = SCISSORS;
-                break;
-        case 3:
-                computer = LIZARD;
-                break;
-        case 4:
-                computer = SPOCK;
-                break;
+        	switch(nrand(CHOICES)) {
+        	case 0:
+                	computer = ROCK;
+                	break;
+        	case 1:
+                	computer = PAPER;
+                	break;
+        	case 2:
+                	computer = SCISSORS;
+                	break;
+        	case 3:
+                	computer = LIZARD;
+                	break;
+        	case 4:
+                	computer = SPOCK;
+                	break;
         }
 
 	/*debug -- you don't need this to play the game */
-	move(COMPUTER, computer);
+		move(COMPUTER, computer);
 
 
         /* todo --implement function winner() */
         /* todo --implement function print_winner() */
-	printf("todo -- who wins? implement the winner with switch statements\n");
+		
+
+	}
 
 	return 0;
 }
@@ -132,56 +137,55 @@ void move(int who, int move)
 int winner(int computer, int player)
 {
 	switch (player) {
-	case 'R':
+	case ROCK:
 		switch (computer) {
-		case 'P':
-		case 'V':
-			winner = computer;
+		case PAPER:
+		case SPOCK:
+			return COMPUTER;
 			break;
 		default:
-			winner = player;
+			return PLAYER;
 		}
-	case 'P':
+	case PAPER:
 		switch (computer) {
-		case 'S':
-		case 'L':
-			winner = computer;
+		case SCISSORS:
+		case LIZARD:
+			return COMPUTER;
 			break;
 		default:
-			winner = player;
+			return PLAYER;
 		}
-	case 'S':
+	case SCISSORS:
 		switch (computer) {
-		case 'R':
-		case 'V':
-			winner = computer;
+		case ROCK:
+		case SPOCK:
+			return COMPUTER;
 			break;
 		default: 
-			winner = player;
+			return PLAYER;
 	
 		}
-	case 'L':
+	case LIZARD:
 		switch (computer) {
-		case 'R':
-		case 'S':
-			winner = computer;
+		case ROCK:
+		case SPOCK:
+			return COMPUTER;
 		default:
-			winner = player;
+			return PLAYER;
 		}
-	case 'V':
+	case SPOCK:
 		switch (computer) {
-		case 'L':
-		case 'P':
-			winner = computer;
+		case LIZARD:
+		case PAPER:
+			return COMPUTER;
 		default:
-			winner = player;
+			return PLAYER;
 		}
-	case "Q":
+	case 'Q':
 		printf("SPOCK eats a ROCK while chasing a LIZARD.\n");
 		return 0;
 	default:
 		printf("The entered value is unknown. Try again.\n");
-		continue;
 	}
 	/* todo - determine the winner; use switch statements */
 	return COMPUTER;
@@ -196,13 +200,96 @@ int winner(int computer, int player)
  */
 void print_winner(int winner, int comp_move, int player_move)
 {   
-	switch (winner == player_move) {
-	case 'R':
-	
-		printf("Player Wins! Rock ");
-
+	switch (winner) {
+	case COMPUTER:
+		printf("Computer Wins!\n");
+		break;
+	case PLAYER:
+		printf("Player Wins!\n");
+		break;
+	default:
+		printf("Tie!\n");
 
 	}
+
+	switch(comp_move) {
+		case ROCK:
+			switch (player_move) {
+				case PAPER:
+					printf("Paper covers rock\n");
+					break;
+				case LIZARD:
+					printf("Rock crushes lizard\n");
+					break;
+				case SCISSORS:
+					printf("Rock crushes scissors\n");
+					break;
+				case SPOCK:
+					printf("Spock vaporizes rock\n");
+			}
+			break;
+		case PAPER:
+			switch (player_move) {
+				case SCISSORS:
+					printf("Scissors cuts paper\n");
+					break;
+				case ROCK:
+					printf("Paper covers rock\n");
+					break;
+				case LIZARD:
+					printf("Lizard eats paper\n");
+					break;
+				case SPOCK:
+					printf("Paper disproves Spock\n");
+			}
+			break;
+		case SCISSORS:
+			switch (player_move) {
+				case PAPER:
+					printf("Scissors cuts paper\n");
+					break;
+				case SPOCK:
+					printf("Spock smashes scissors\n");
+					break;
+				case LIZARD:
+					printf("Scissors decapitates lizard\n");
+					break;
+				case ROCK:
+					printf("Rock crushes scissors\n");
+			}
+			break;
+		case LIZARD:
+			switch (comp_move) {
+				case ROCK:
+					printf("Rock crushes lizard\n");
+					break;
+				case SPOCK:
+					printf("Lizard poisons Spock\n");
+					break;
+				case SCISSORS:
+					printf("Scissors decaptitates lizard\n");
+					break;
+				case PAPER:
+					printf("Lizard eats paper\n");
+			}
+			break;
+		case SPOCK:
+			switch (player_move) {
+				case LIZARD:
+					printf("Lizard poisons Spock\n");
+					break;
+				case SCISSORS:
+					printf("Spock smashes scissors\n");
+					break;
+				case PAPER:
+					printf("Paper disproves Spock\n");
+					break;
+				case ROCK:
+					printf("Spock vaporizes rock");
+			}		
+			break;
+	}
+
 
 	/*todo - use a switch statement
 

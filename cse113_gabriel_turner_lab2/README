@@ -1,0 +1,27 @@
+Gabriel Turner
+2021-09-14
+Lab 2
+
+Purpose: To use logic in programs to use inputs from the user to bring certain results or equations
+based on this.
+
+Conclusion:
+a) What I learned:
+    I learned how to use ifelse and switch statements. Additionally, one of the coolest things
+personally I think that I learned was using while loops. In the rock, paper, scissors, lizard,
+spock game we used a while loop to have the code run until Q is pressed. This took a long time many
+many attempts (too many attempts) to get right but I felt very satisfied and felt like the ordeal 
+taught me alot. Next I learned when to use switch statements and when to use ifelse statements. 
+Usually I will use switch statements when the conditions are alot clearer and easier to see. If else
+statements I will use more on items that need more logical statements decide rather than just a 
+quick comparison to see if they are the same. 
+
+b) How did pair programming help/hinder the lab:
+Pair programming: I think this helped me understand the lab. Most of the codes we worked on in prelab 2 i felt like had some application that helped with lab 2. Additionally, talking out the computer logic with a partner definitely i felt liked helped me understand it to the point I could use it on my own.
+Buddy programming: I didn't really consult my partner during the lab and have yet to review each others code too.
+
+c) Issues and how I fixed them (bug report):
+One bug i had was that i had was when i had an error in my rock paper scissors one it would cause me to need to use Q twice. At that point I had the default case call upon main() again. I found out however basically what was happening is I essentially nested the main() function and every time I would cause an error with the letter I put I would go a layer deeper into main and therefore needed to do Q that main times to exit the program. What I did was found out about a command called continue; which caused the program to work great.
+
+d) Improvements that can be made:
+Eventually I kinda would like to add a score board for rock-spock.c. I want to become a video game developer someday and so that is generally an important part of making a game so I would like to try that at somepoing. Also in lab2.c I would like to have the program looped similar to how rock-spock.c is as well as I would like to add some more useful equations to me at some point.

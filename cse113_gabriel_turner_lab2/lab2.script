@@ -1,0 +1,56 @@
+Script started on 2021-09-14 17:00:00-06:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="128" LINES="23"]
+]0;gabraham@gabraham-VirtualBox: ~/cse113/lab2/lab2/done[01;32mgabraham@gabraham-VirtualBox[00m:[01;34m~/cse113/lab2/lab2/done[00m$ ./;[Klab2
+Select shape
+R. Rectangle
+C. Circle
+T. Triangle
+P. Polygon
+Make choice (R, C, T, P): R
+select equation
+A. area
+P. perimeter
+D. diagonal
+Make choice (A, P, D): A
+input height and width: 4
+3
+A rectangle with height 4 and width 3 has an area of 12.000000.
+]0;gabraham@gabraham-VirtualBox: ~/cse113/lab2/lab2/done[01;32mgabraham@gabraham-VirtualBox[00m:[01;34m~/cse113/lab2/lab2/done[00m$ ./lab2
+Select shape
+R. Rectangle
+C. Circle
+T. Triangle
+P. Polygon
+Make choice (R, C, T, P): c
+select equation
+A. area
+C. circumference
+Make choice (A, C): a
+enter circles radius:  4
+area of circle with radius 4.000000 is 50.265488
+]0;gabraham@gabraham-VirtualBox: ~/cse113/lab2/lab2/done[01;32mgabraham@gabraham-VirtualBox[00m:[01;34m~/cse113/lab2/lab2/done[00m$ ./lab2
+Select shape
+R. Rectangle
+C. Circle
+T. Triangle
+P. Polygon
+Make choice (R, C, T, P): s
+unknown shape try again
+]0;gabraham@gabraham-VirtualBox: ~/cse113/lab2/lab2/done[01;32mgabraham@gabraham-VirtualBox[00m:[01;34m~/cse113/lab2/lab2/done[00m$ ./lab2
+Select shape
+R. Rectangle
+C. Circle
+T. Triangle
+P. Polygon
+Make choice (R, C, T, P): r
+select equation
+A. area
+P. perimeter
+D. diagonal
+Make choice (A, P, D): a
+input height and width: -2
+3
+negative value do not exist
+]0;gabraham@gabraham-VirtualBox: ~/cse113/lab2/lab2/done[01;32mgabraham@gabraham-VirtualBox[00m:[01;34m~/cse113/lab2/lab2/done[00m$ exit
+exit
+
+Script done on 2021-09-14 17:01:20-06:00 [COMMAND_EXIT_CODE="0"]
