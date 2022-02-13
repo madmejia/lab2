@@ -28,6 +28,7 @@ int main(void)
         int rect_height, rect_width, n_sides;
         double r, tri_height, tri_base, side_length;
 
+        ///prompts user to select shape 
         printf("Select a shape from the following:\n");
         printf("R for Rectangles\n");
         printf("C for Circles\n");
@@ -35,10 +36,21 @@ int main(void)
         printf("P for Regular Polygons\n");
         printf("Make your selection: ");
 
+        /**
+         * stores input in tmp and checks for the newline character
+         * then stores value in tmp into selection variable
+         */
         while ((tmp = getchar()) != '\n') 
                 selection = tmp;
 
-
+        /**
+         * switch statement takes in input for shape selection and enters 
+         * a secondary switch statement to ask which geometric calculation
+         * should be performed
+         * this will then prompt the user to input the needed values
+         * and utilizes the necessary equation to perform the
+         * calculation and print out the result
+         */
         switch (selection) {
         case 'R': 
         case 'r':
@@ -235,11 +247,13 @@ int main(void)
                                 }
                                 break;
                         default:
+                                ///checks for unknown input
                                 printf("Unknown calculation\n");
                         }
                 }
                 break;
         default:
+                ///checks for unknown input
                 printf("Unknown shape\n");
         }
 

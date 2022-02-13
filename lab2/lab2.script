@@ -1,0 +1,111 @@
+Script started on 2022-02-13 04:53:48-07:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="81" LINES="12"]
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ exitgcc -g -Wall functions.o lab2.c -o lab2 -lm
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ gcc -g -Wall functions.o lab2.c -o lab2 -lm[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kgcc -g -Wall functions.o lab2.c -o lab2 -lm[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K./lab2
+Select a shape from the following:
+R for Rectangles
+C for Circles
+T for Right Triangles
+P for Regular Polygons
+Make your selection: p
+Select a calculation to perform:
+I for Interior Angle
+E for Exterior Angle
+A for Area
+Make a selection: a
+Enter the number of sides in a polygon: 7
+Enter the length of a side: 3
+The area is 32.705208.
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ ./lab2
+Select a shape from the following:
+R for Rectangles
+C for Circles
+T for Right Triangles
+P for Regular Polygons
+Make your selection: p
+Select a calculation to perform:
+I for Interior Angle
+E for Exterior Angle
+A for Area
+Make a selection: i
+Enter the number of sides in a polygon: 3
+The angle is 60.000000.
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ ./lab2
+Select a shape from the following:
+R for Rectangles
+C for Circles
+T for Right Triangles
+P for Regular Polygons
+Make your selection: p
+Select a calculation to perform:
+I for Interior Angle
+E for Exterior Angle
+A for Area
+Make a selection: i
+Enter the number of sides in a polygon: 5
+The angle is 108.000000.
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ ./lab2
+Select a shape from the following:
+R for Rectangles
+C for Circles
+T for Right Triangles
+P for Regular Polygons
+Make your selection: t
+Select a calculation to perform:
+A for Area
+H for Hypotenuse
+P for Perimeter
+Make a selection: h
+Enter the height and base: 7 8
+The hypotenuse is 10.630146.
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ ./lab2
+Select a shape from the following:
+R for Rectangles
+C for Circles
+T for Right Triangles
+P for Regular Polygons
+Make your selection: c
+Select a calculation to perform:
+A for Area
+C for Circumference
+Make a selection: c
+Input circle radius: 4
+The circle has a circumference of 25.132744.
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ ./lab2
+Select a shape from the following:
+R for Rectangles
+C for Circles
+T for Right Triangles
+P for Regular Polygons
+Make your selection: r
+Select a calculation to perform:
+A for Area
+P for Perimeter
+D for Diagonal
+Make your selection: d
+Input height and width as integers: 9 4
+The rectangle has a diagonal of 9.848858.
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ ./lab2
+Select a shape from the following:
+R for Rectangles
+C for Circles
+T for Right Triangles
+P for Regular Polygons
+Make your selection: g
+Unknown shape
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ ./lab2
+Select a shape from the following:
+R for Rectangles
+C for Circles
+T for Right Triangles
+P for Regular Polygons
+Make your selection: t
+Select a calculation to perform:
+A for Area
+H for Hypotenuse
+P for Perimeter
+Make a selection: k
+Unknown calculation
+]0;mad@CSE113: ~/Desktop/lab2/lab2[01;32mmad@CSE113[00m:[01;34m~/Desktop/lab2/lab2[00m$ exit
+exit
+
+Script done on 2022-02-13 04:54:37-07:00 [COMMAND_EXIT_CODE="0"]
