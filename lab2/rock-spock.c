@@ -211,6 +211,9 @@ int winner(int computer, int player)
 		}
 		break;
 	}
+
+	///returns computer as winner if something is buggy
+	return COMPUTER;
 }
 
 /**
