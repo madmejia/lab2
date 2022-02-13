@@ -1,10 +1,9 @@
 /**
  * @file rock-spock.c
- * @author Madison Mejia
- * @date 2/9/2022
+ * @author
+ * @date
  * @brief Play Rock-paper-scissors-lizard-Spock against the machine
  */
-
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -49,7 +48,6 @@ int main(void)
 	printf("Move: ");
 	while ((tmp = getchar()) != '\n')
                 player = tmp;
-
 
         /* todo - error check input */
 	/* todo -- exit from program when player selects 5 */
@@ -131,59 +129,8 @@ void move(int who, int move)
  */
 int winner(int computer, int player)
 {
-	switch (player) {
-	case 'R':
-		switch (computer) {
-		case 'P':
-		case 'V':
-			winner = computer;
-			break;
-		default:
-			winner = player;
-		}
-	case 'P':
-		switch (computer) {
-		case 'S':
-		case 'L':
-			winner = computer;
-			break;
-		default:
-			winner = player;
-		}
-	case 'S':
-		switch (computer) {
-		case 'R':
-		case 'V':
-			winner = computer;
-			break;
-		default: 
-			winner = player;
-	
-		}
-	case 'L':
-		switch (computer) {
-		case 'R':
-		case 'S':
-			winner = computer;
-		default:
-			winner = player;
-		}
-	case 'V':
-		switch (computer) {
-		case 'L':
-		case 'P':
-			winner = computer;
-		default:
-			winner = player;
-		}
-	case "Q":
-		printf("SPOCK eats a ROCK while chasing a LIZARD.\n");
-		return 0;
-	default:
-		printf("The entered value is unknown. Try again.\n");
-		continue;
-	}
 	/* todo - determine the winner; use switch statements */
+
 	return COMPUTER;
 }
 
@@ -195,17 +142,8 @@ int winner(int computer, int player)
  * @return void
  */
 void print_winner(int winner, int comp_move, int player_move)
-{   
-	switch (winner == player_move) {
-	case 'R':
-	
-		printf("Player Wins! Rock ");
-
-
-	}
-
-	/*todo - use a switch statement
-
+{
+    /* todo - use a switch statement
 
     print Computer Wins! or Player Wins!
 
@@ -243,4 +181,3 @@ void seed(void)
 {
   	srand((unsigned int)time(NULL));
 }
-
